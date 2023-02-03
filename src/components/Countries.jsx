@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-
+import {useDispatch, useSelector} from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -8,11 +8,21 @@ import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
+import {initializeCountries} from "../features/countriesSlice";
+
 
 const Countries = () => {
+  const dispatch = useDispatch();
+
+  const countriesList = useSelector((state) => state.countries.countries)
+
   const [search, setSearch] = useState('')
 
-  console.log("Search: ", search)
+  //console.log("Search: ", search)
+
+  useEffect(() => {
+    dispatch(initializeCountries())
+  },[dispatch])
 
   // We will be replacing this with data from our API.
   const country = {
@@ -20,6 +30,7 @@ const Countries = () => {
       common: 'Example Country'
     }
   }
+
 
   return (
     <Container fluid>
@@ -37,7 +48,7 @@ const Countries = () => {
           </Form>
         </Col>
       </Row>
-      <Row xs={2} md={3} lg={4} className=" g-3">
+      <Row xs={2} md={3} lg={4} className="g-3">
             <Col className="mt-5">
               <LinkContainer
                 to={`/countries/${country.name.common}`}
@@ -72,5 +83,6 @@ const Countries = () => {
     </Container>
   );
 };
+                
 
 export default Countries;
