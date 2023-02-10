@@ -48,7 +48,7 @@ const Countries = () => {
       </Row>
       
       <Row xs={2} md={3} lg={4} className="g-3">
-        {(loading) ? <Spinner animation="border" variant="primary"  /> : ''}
+        {(loading) ? <Spinner  animation="border" variant="primary"  /> : ''}
         
       
         {countriesList.filter((c) => {
@@ -66,7 +66,7 @@ const Countries = () => {
             <Card className="h-100">
               <Card.Body className="d-flex flex-column">
 
-                <CardImg src={country.flags.svg}></CardImg>
+                <CardImg src={country.flags.svg} ></CardImg>
             
                 <Card.Title>{country.name.common}</Card.Title>
                 <Card.Subtitle className="mb-5 text-muted">
