@@ -9,13 +9,13 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
 import {initializeCountries} from "../features/countriesSlice";
+import CardImg from 'react-bootstrap/esm/CardImg';
 import Spinner from 'react-bootstrap/Spinner';
-import addFavourites from '../features/favouritesSlice'
 
 
 
 
-const Countries = () => {
+const Favourites = () => {
   const dispatch = useDispatch();
 
   const countriesList = useSelector((state) => state.countries.countries)
@@ -46,6 +46,8 @@ const Countries = () => {
           </Form>
         </Col>
       </Row>
+
+      <Row xs={2} md={3} lg={4} className="g-3"></Row>
       
       <Row xs={2} md={3} lg={4} className="g-3">
         {(loading) ? <Spinner  animation="border" variant="primary"  /> : ''}
@@ -64,10 +66,9 @@ const Countries = () => {
           >
             
             <Card className="h-100">
-            <i class="bi bi-emoji-kiss-fill text-danger m-1 p-1" onClick={() => dispatch(addFavourites(country.name.common))} ></i>
               <Card.Body className="d-flex flex-column">
 
-                <Card.Img
+                <CardImg
                 variant='top'
                 height='200px'
                 width='60px' 
@@ -112,4 +113,4 @@ const Countries = () => {
 };
                 
 
-export default Countries;
+export default Favourites;
