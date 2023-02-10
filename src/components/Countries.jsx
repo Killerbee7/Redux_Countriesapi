@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
 import {initializeCountries} from "../features/countriesSlice";
 import Spinner from 'react-bootstrap/Spinner';
-import addFavourites from '../features/favouritesSlice'
+import {addFavorite} from '../features/favoritesSlice';
 
 
 
@@ -62,9 +62,9 @@ const Countries = () => {
             to={`/countries/${country.name.common}`}
             state={{ country: country }}
           >
-            
+            <i class="bi bi-emoji-kiss-fill text-danger m-1 p-1" onClick={() => dispatch(addFavorite(country.name.common))} ></i>
             <Card className="h-100">
-            <i class="bi bi-emoji-kiss-fill text-danger m-1 p-1" onClick={() => dispatch(addFavourites(country.name.common))} ></i>
+            
               <Card.Body className="d-flex flex-column">
 
                 <Card.Img

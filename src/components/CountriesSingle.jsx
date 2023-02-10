@@ -29,6 +29,7 @@ const CountriesSingle = () => {
     .then((res) =>{
       setWeather(res.data);
       setError(false)
+      setLoading(false)
     })
 
   },[country.capital])

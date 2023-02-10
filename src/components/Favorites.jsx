@@ -5,27 +5,38 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
 import {initializeCountries} from "../features/countriesSlice";
 import CardImg from 'react-bootstrap/esm/CardImg';
 import Spinner from 'react-bootstrap/Spinner';
+import { clearFavorites } from '../features/favoritesSlice';
 
 
 
 
-const Favourites = () => {
+const Favorites = () => {
   const dispatch = useDispatch();
 
-  const countriesList = useSelector((state) => state.countries.countries)
+  let countriesList = useSelector((state) => state.countries.countries)
   const loading = useSelector((state) => state.countries.isLoading)
   const [search, setSearch] = useState('')
+  const [favList, setFavList] = useState([])
+
+  if(favList !== null){
+    countriesList = countriesList.filter (c => favList.includes(c.name.common))
+  }
+  else{
+    countriesList=[];
+  }
 
 
 
   useEffect(() => {
     dispatch(initializeCountries())
+    setFavList(localStorage.getItem('Favorites'))
   },[dispatch])
 
   
@@ -47,7 +58,7 @@ const Favourites = () => {
         </Col>
       </Row>
 
-      <Row xs={2} md={3} lg={4} className="g-3"></Row>
+      <Row xs={2} md={3} lg={4} className="g-3"> <Button onClick={() => dispatch(clearFavorites)}>Clear Favorites</Button></Row>
       
       <Row xs={2} md={3} lg={4} className="g-3">
         {(loading) ? <Spinner  animation="border" variant="primary"  /> : ''}
@@ -113,4 +124,4 @@ const Favourites = () => {
 };
                 
 
-export default Favourites;
+export default Favorites;
