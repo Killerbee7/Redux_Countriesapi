@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 import {initializeCountries} from "../features/countriesSlice";
 import Spinner from 'react-bootstrap/Spinner';
 import {addFavorite} from '../features/favoritesSlice';
@@ -58,12 +58,13 @@ const Countries = () => {
         }).map((country)=>(  
           
           <Col className="mt-5">
-          <LinkContainer
+          <Link
             to={`/countries/${country.name.common}`}
             state={{ country: country }}
           >
-            <i class="bi bi-emoji-kiss-fill text-danger m-1 p-1" onClick={() => dispatch(addFavorite(country.name.common))} ></i>
+            
             <Card className="h-100">
+            <i class="bi bi-arrow-through-heart"  onClick={() => dispatch(addFavorite(country.name.common))} ></i>
             
               <Card.Body className="d-flex flex-column">
 
@@ -102,7 +103,7 @@ const Countries = () => {
                 </ListGroup>
               </Card.Body>
             </Card>
-          </LinkContainer>
+          </Link>
         </Col> 
         ))}
             
