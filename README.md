@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Countries API Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
