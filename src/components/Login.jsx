@@ -21,9 +21,9 @@ const Login = () => {
     }, [user, loading])
 
     return(
-        <div>
+        <div style={{ background: 'skyblue', height: '100vh', width: "100vw" }} >
         
-
+<div style={{display: "flex", flexDirection: "row", marginTop: '50px'}}>
 <input type="text"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -34,7 +34,9 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder= "Password" />
 
+
         <Button onClick={() => logInWithEmailAndPassword(email, password)}>Login</Button>
+        </div>
         <div>
             Don't have an account ? <Link to="/register" > Login </Link> now.
         </div>
