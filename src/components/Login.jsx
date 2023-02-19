@@ -23,23 +23,25 @@ const Login = () => {
     return(
         <div style={{ background: 'skyblue', height: '100vh', width: "100vw" }} >
         
-<div style={{display: "flex", flexDirection: "row", marginTop: '50px'}}>
+<div style={{display: "flex", flexDirection: "column", marginTop: '50px', gap: "20px"}}>
 <input type="text"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder= "Email" />
 
         <input type="text"
+        
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder= "Password" />
 
 
         <Button onClick={() => logInWithEmailAndPassword(email, password)}>Login</Button>
+        <h3>Don't have an account ? <Link to="/register" > Login </Link> now.</h3>
         </div>
-        <div>
-            Don't have an account ? <Link to="/register" > Login </Link> now.
-        </div>
+        
+           
+        
          </div>
     )
     
