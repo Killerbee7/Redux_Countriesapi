@@ -37,7 +37,7 @@ const Login = () => {
 
 
         <Button onClick={() => logInWithEmailAndPassword(email, password)}>Login</Button>
-        <h3>Don't have an account ? <Link to="/register" > Login </Link> now.</h3>
+        <h5>Don't have an account ? <Link to="/register" > Login </Link> now.</h5>
         </div>
         
            
