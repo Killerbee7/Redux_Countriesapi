@@ -9,11 +9,12 @@ const Home = () => {
     backgroundRepeat: 'no-repeat', height: "95vh"} }>
       <div style={{display: "flex", flexDirection: "row", }}>
       <div style={{width: "50vw"}}></div>
-      <div style={{marginTop: "25%", marginLeft: "30%"}}>
-        <span>Countries app </span>is a simple React application made in
-        Business College Helsinki lessons. App uses{' '}
-        <a href="https://restcountries.com/">https://restcountries.com/ </a> and{' '}
-        <a href="https://openweathermap.org/">https://openweathermap.org/</a>
+      <div style={{marginTop: "10%", marginLeft: "10%", color:"red"}}>
+        <h1 style={{marginBottom: "300px", fontSize: "60px", border: "dotted"}} >Countries app </h1>
+        
+        <h2><a  href="https://restcountries.com/">https://restcountries.com/ </a> {' '}</h2>
+        <h2><a href="https://openweathermap.org/">https://openweathermap.org/</a></h2>
+        
       </div>
       </div>
     </div>
