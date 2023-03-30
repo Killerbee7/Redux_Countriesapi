@@ -13,9 +13,13 @@ const CountriesSingle = () => {
  const [weather, setWeather]= useState('');
  const [error, setError]= useState(false);
  const [loading, setLoading]= useState(false);
+
+ 
+ 
  
 
  
+
 
 
 
@@ -56,8 +60,8 @@ const CountriesSingle = () => {
     <Container>
       <Row className='m-5'>
       <Col> {' '}
-        <Image thumbnail src={`https://source.unsplash.com/featured/1600x900?${country.flag.svg}`}/>
-        <h1>{country.capital}</h1>
+        <Image thumbnail src={`https://source.unsplash.com/featured/1600x900?${country.capital}`}/>
+        
       </Col>
       <Col>
       <h2 className='display-4'>{country.name.common}</h2>
@@ -67,11 +71,17 @@ const CountriesSingle = () => {
           <p>
             Temperature is <strong>{weather.main.temp}</strong> degrees in {country.capital} and {weather.weather[0].description}
           </p>
-          <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
+          <img className='bg-secondary' src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
         </div>
       )}
+      
       </Col>
+      
       </Row>
+
+      
+      
+
 
       <Row>
         <Col>

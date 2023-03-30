@@ -4,7 +4,7 @@ import Countries from './components/Countries';
 import CountriesSingle from './components/CountriesSingle';
 import Home from './components/Home';
 import Layout from './pages/Layout';
-import Favorites from './components/Favorites';
+import Favourites from './components/Favourites';
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Register } from './components/Register';
@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/register" element={<Register/>} />
           <Route element={<ProtectedRoute user={user}/>}>
           <Route path="/countries" element={<Countries />} />
-          <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/favourites" element={<Favourites/>} />
           <Route path="/countries/:single" element={<CountriesSingle />} />
           </Route>
           

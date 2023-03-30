@@ -12,12 +12,12 @@ import { LinkContainer } from 'react-router-bootstrap';
 import {initializeCountries} from "../features/countriesSlice";
 import CardImg from 'react-bootstrap/esm/CardImg';
 import Spinner from 'react-bootstrap/Spinner';
-import { clearFavorites } from '../features/favoritesSlice';
+import { clearFavourites } from '../features/favouritesSlice';
 
 
 
 
-const Favorites = () => {
+const Favourites = () => {
   const dispatch = useDispatch();
 
   let countriesList = useSelector((state) => state.countries.countries)
@@ -36,7 +36,7 @@ const Favorites = () => {
 
   useEffect(() => {
     dispatch(initializeCountries())
-    setFavList(localStorage.getItem('Favorites'))
+    setFavList(localStorage.getItem('Favourites'))
   },[dispatch])
 
   
@@ -58,7 +58,7 @@ const Favorites = () => {
         </Col>
       </Row>
 
-      <Row xs={2} md={3} lg={4} className="g-3"> <Button onClick={() => dispatch(clearFavorites)}>Clear Favorites</Button></Row>
+      <Row xs={2} md={3} lg={4} className="g-3"> <Button onClick={() => dispatch(clearFavourites)}>Clear Favorites</Button></Row>
       
       <Row xs={2} md={3} lg={4} className="g-3">
         {(loading) ? <Spinner  animation="border" variant="primary"  /> : ''}
@@ -124,4 +124,4 @@ const Favorites = () => {
 };
                 
 
-export default Favorites;
+export default Favourites;
