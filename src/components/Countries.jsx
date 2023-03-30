@@ -59,12 +59,6 @@ const Countries = () => {
         }).map((country)=>(  
           
           <Col className="mt-5">
-          <Link
-            to={`/countries/${country.name.common}`}
-            state={{ country: country }}
-          >
-            
-            <Card className="h-100">
             {favouritesList.includes(country.name.common) ? (
                       <i
                         className="bi bi-heart-fill text-danger m-1 p-1"
@@ -80,6 +74,13 @@ const Countries = () => {
                         }
                       ></i>
                     )}
+          <Link
+            to={`/countries/${country.name.common}`}
+            state={{ country: country }}
+          >
+            
+            <Card className="h-100">
+            
 
            
             
@@ -89,7 +90,12 @@ const Countries = () => {
                 variant='top'
                 height='200px'
                 width='60px' 
-                src={country.flags.svg} />
+                src={country.flags.svg} 
+                alt="image not found"
+        onError={event => {
+          event.target.src = "https://images.unsplash.com/photo-1594322436404-5a0526db4d13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80"
+          event.onerror = null
+        }}/>
             
                 <Card.Title>{country.name.common}</Card.Title>
                 <Card.Subtitle className="mb-5 text-muted">

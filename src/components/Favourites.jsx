@@ -58,7 +58,7 @@ const Favourites = () => {
         </Col>
       </Row>
 
-      <Row xs={2} md={3} lg={4} className="g-3"> <Button onClick={() => dispatch(clearFavourites)}>Clear Favorites</Button></Row>
+      <Row xs={2} md={3} lg={4} className="g-3"> <Button onClick={() => dispatch(clearFavourites())}>Clear Favorites</Button></Row>
       
       <Row xs={2} md={3} lg={4} className="g-3">
         {(loading) ? <Spinner  animation="border" variant="primary"  /> : ''}

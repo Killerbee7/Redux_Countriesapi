@@ -38,8 +38,7 @@ const CountriesSingle = () => {
 
   },[country.capital])
 
-  console.log(weather)
-  console.log(country)
+  
 
   if(loading){
     return (
@@ -85,7 +84,7 @@ const CountriesSingle = () => {
 
       <Row>
         <Col>
-        <Button varient="light" onClick={() => navigate(-1)}>Back</Button>
+        <Button  varient="light" onClick={() => navigate(-1)}>Back</Button>
         </Col>
       </Row>
      
