@@ -17,7 +17,7 @@ const Login = () => {
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/countries");
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   
 

@@ -6,8 +6,14 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../auth/firebase';
+import { getAuth } from "firebase/auth";
+
 
 const Layout = () => {
+  const auth = getAuth();
+  const user= auth.currentUser;
+
+  
   return (
     <Container fluid>
       <Row>
@@ -33,7 +39,19 @@ const Layout = () => {
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
-            <button onClick={()=> logout()}>Logout</button>
+            <div>
+              {user ? (
+                <>
+                  Hi : {user.email}
+                  <button onClick={()=> logout()}>Logout</button>
+                </>
+              ) : (
+                <>
+                </>
+              )}
+            </div>
+          
+        
           </Container>
         </Navbar>
       </Row>
