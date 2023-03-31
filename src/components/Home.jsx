@@ -29,14 +29,15 @@ const Home = () => {
           </h1>
           <div style={{
               textAlign: "right",
-              top: "150px",
+              top: "45%",
+              
               right: "16px",
               position: "absolute",
               fontSize: "30px",
               display: "flex",
               flexDirection: "column",
               fontColor:"red",
-              textDecoration: "none",
+              
             }}>
             
               <a href="https://restcountries.com/">
