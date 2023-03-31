@@ -73,12 +73,29 @@ const CountriesSingle = () => {
           <img className='bg-secondary' src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
         </div>
       )}
+
+      <fieldset className='border p-2 mt-2'>
+        <legend className="float-none w-auto p-2" >Neighbours</legend>
+        <Row >
+
+      
+     
+          {country.borders.map((border) => (
+           
+           <Col>
+        <h4 key={border}>{border}</h4>
+        </Col>
+      ))}
+           </Row>
+      </fieldset>
       
       </Col>
       
       </Row>
 
       
+   
+
       
 
 

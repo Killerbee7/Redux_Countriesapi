@@ -87,9 +87,7 @@ const Countries = () => {
               <Card.Body className="d-flex flex-column">
 
                 <Card.Img
-                variant='top'
-                height='200px'
-                width='60px' 
+                className='mb-4' 
                 src={country.flags.svg} 
                 alt="image not found"
         onError={event => {
