@@ -1,21 +1,57 @@
-import React from 'react';
+import React from "react";
 
-import Background from '../images/globe.jpg'
+import Background from "../images/globe.jpg";
 
 const Home = () => {
   return (
-    <div style={{backgroundImage: "url(" + Background + ")", backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat', height: "95vh"} }>
-      <div style={{display: "flex", flexDirection: "row", }}>
-      <div style={{width: "50vw"}}></div>
-      <div style={{marginTop: "10%", marginLeft: "10%", color:"red"}}>
-        <h1 style={{marginBottom: "300px", fontSize: "60px"}} >Countries app </h1>
-        
-        <h2><a  href="https://restcountries.com/">https://restcountries.com/ </a> {' '}</h2>
-        <h2><a href="https://openweathermap.org/">https://openweathermap.org/</a></h2>
-        
-      </div>
+    <div
+      style={{
+        backgroundImage: "url(" + Background + ")",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "95vh",
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div style={{ width: "50vw" }}></div>
+        <div className="p-5 text-success ">
+          <h1
+            style={{
+              marginBottom: "300px",
+              fontSize: "60px",
+              position: "absolute",
+              top: "60px",
+              right: "16px",
+            }}
+          >
+            Countries Bootstrap Application{" "}
+          </h1>
+          <div style={{
+              textAlign: "right",
+              top: "150px",
+              right: "16px",
+              position: "absolute",
+              fontSize: "30px",
+              display: "flex",
+              flexDirection: "column",
+              fontColor:"red",
+              textDecoration: "none",
+            }}>
+            
+              <a href="https://restcountries.com/">
+                Rest Countries API
+              </a>
+           
+          
+
+          
+            <a className="m-6" href="https://openweathermap.org/">
+              Open Weather API
+            </a>
+          
+          </div>
+        </div>
       </div>
     </div>
   );
