@@ -59,6 +59,7 @@ const Countries = () => {
         }).map((country)=>(  
           
           <Col className="mt-5">
+            
             {favouritesList.includes(country.name.common) ? (
                       <i
                         className="bi bi-heart-fill text-danger m-1 p-1"
