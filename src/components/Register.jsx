@@ -21,7 +21,17 @@ const Register = () => {
     if (user) navigate("/countries");
   }, [user, loading, navigate]);
   return (
-    <div>
+    <div style={{ background: "lightgrey", height: "100vh", width: "100vw" }}>
+        <h2 className="text-center mt-5" >Register</h2>
+        <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          marginTop: "50px",
+          gap: "20px",
+        }}
+      >
+       
       <input
         type="text"
         value={name}
@@ -44,9 +54,10 @@ const Register = () => {
       />
 
       <Button onClick={register}>Register</Button>
-      <div>
+      <h5 className="text-center">
         Already have an account?
         <Link to="/login"> Login </Link> now.
+      </h5>
       </div>
     </div>
   );

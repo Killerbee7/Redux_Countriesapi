@@ -93,7 +93,7 @@ const CountriesSingle = () => {
             </fieldset>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col>
             <fieldset className="border border-danger">
               <p className="border">capital: {country.capital}</p>
@@ -110,12 +110,12 @@ const CountriesSingle = () => {
               <h2>capital: {country.capital}</h2>
             </fieldset>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
       <div style={{ width: "100px" }}>
         <Button
           varient="light"
-          class="btn btn-primary btn-sm"
+          className="btn btn-primary btn-lg single"
           onClick={() => navigate(-1)}
         >
           Back

@@ -22,7 +22,8 @@ const Login = () => {
   
 
   return (
-    <div style={{ background: "skyblue", height: "100vh", width: "100vw" }}>
+    <div style={{ background: "lightgrey", height: "100vh", width: "100vw" }}>
+        <h2 className="text-center mt-5" >Login</h2>
       <div
         style={{
           display: "flex",
@@ -32,6 +33,7 @@ const Login = () => {
         }}
       >
         <input
+        
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -48,7 +50,7 @@ const Login = () => {
         <Button onClick={() => logInWithEmailAndPassword(email, password)}>
           Login
         </Button>
-        <h5>
+        <h5 className="text-center">
           Don't have an account ? <Link to="/register"> Register </Link> now.
         </h5>
       </div>
