@@ -12,8 +12,6 @@ const CountriesSingle = () => {
   const [weather, setWeather] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  
-  
 
   useEffect(() => {
     axios
@@ -30,7 +28,6 @@ const CountriesSingle = () => {
       });
   }, [country.capital]);
 
- 
   if (loading) {
     return (
       <Col className="text-center m-5">
@@ -46,67 +43,85 @@ const CountriesSingle = () => {
     );
   }
   return (
-    <Container>
-      <Row className="m-5">
-        <Col>
-          {" "}
-          <Image
-          
-            thumbnail
-            src={`https://source.unsplash.com/featured/800x500?${country.capital}`}
-          />
-        </Col>
-        <Col className="">
-          <h2 className="display-4">{country.name.common}{ "   "}{country.flag}</h2>
-          <h3>{country.capital}</h3>
-          {!error && weather && (
-            <div>
-              <p>
-                Temperature is <strong>{weather.main.temp}</strong> degrees in{" "}
-                {country.capital} and {weather.weather[0].description}
-              </p>
-              <img
-                className="bg-secondary"
-                src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                alt={weather.weather[0].description}
-              />
+    <>
+      <Container>
+        <Row className="m-5">
+          <Col>
+            {" "}
+            <Image
+              thumbnail
+              src={`https://source.unsplash.com/featured/800x500?${country.capital}`}
+            />
+          </Col>
+          <Col className="">
+            <h2 className="display-4">
+              {country.name.common}
+              {"   "}
+              {country.flag}
+            </h2>
+            <h3>{country.capital}</h3>
+            {!error && weather && (
+              <div>
+                <p>
+                  Temperature is <strong>{weather.main.temp}</strong> degrees in{" "}
+                  {country.capital} and {weather.weather[0].description}
+                </p>
+                <img
+                  className="bg-secondary"
+                  src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                  alt={weather.weather[0].description}
+                />
+              </div>
+            )}
 
+            <fieldset className="border border-warning p-2 mt-2">
+              <legend className="float-none w-auto p-2">Neighbours</legend>
 
-            </div>
-          )}
-
-        
-
-       
-
-          <fieldset className="border border-warning p-2 mt-2">
-            <legend className="float-none w-auto p-2">Neighbours</legend>
-
-            <Row>
-              {country.borders === undefined ?
-               (<Col className="border border-danger text-center me-2 ms-2">
-              <h3>No Neighbours</h3>
-            </Col>
-              )
-              :(
-             country.borders.map((border) => (
-               <Col className="border border-success text-center me-2 ms-2">
-                 <h3 key={border}>{border}</h3>
-               </Col>
-             )))}
-            </Row>
-          </fieldset> 
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <Button varient="light" onClick={() => navigate(-1)}>
-            Back
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+              <Row>
+                {country.borders === undefined ? (
+                  <Col className="border border-danger text-center me-2 ms-2">
+                    <h3>No Neighbours</h3>
+                  </Col>
+                ) : (
+                  country.borders.map((border) => (
+                    <Col className="border border-success text-center me-2 ms-2">
+                      <h3 key={border}>{border}</h3>
+                    </Col>
+                  ))
+                )}
+              </Row>
+            </fieldset>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <fieldset className="border border-danger">
+              <p className="border">capital: {country.capital}</p>
+              <h2>capital: {country.capital}</h2>
+              <h2>capital: {country.capital}</h2>
+              <h2>capital: {country.capital}</h2>
+            </fieldset>
+          </Col>
+          <Col>
+            <fieldset className="border border-danger">
+              <p className="border">capital: {country.capital}</p>
+              <h2>capital: {country.capital}</h2>
+              <h2>capital: {country.capital}</h2>
+              <h2>capital: {country.capital}</h2>
+            </fieldset>
+          </Col>
+        </Row>
+      </Container>
+      <div style={{ width: "100px" }}>
+        <Button
+          varient="light"
+          class="btn btn-primary btn-sm"
+          onClick={() => navigate(-1)}
+        >
+          Back
+        </Button>
+      </div>
+    </>
   );
 };
 
