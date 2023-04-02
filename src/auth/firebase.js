@@ -11,10 +11,10 @@ import {
 import {
   collection,
   getFirestore,
-  query,
-  where,
+  //query,
+  //where,
   addDoc,
-  getDocs,
+  //getDocs,
 } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
