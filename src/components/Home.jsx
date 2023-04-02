@@ -27,30 +27,24 @@ const Home = () => {
           >
             Countries Bootstrap Application{" "}
           </h1>
-          <div style={{
+          <div
+            style={{
               textAlign: "right",
               top: "45%",
-              
+
               right: "16px",
               position: "absolute",
               fontSize: "30px",
               display: "flex",
               flexDirection: "column",
-              fontColor:"red",
-              
-            }}>
-            
-              <a href="https://restcountries.com/">
-                Rest Countries API
-              </a>
-           
-          
+              fontColor: "red",
+            }}
+          >
+            <a href="https://restcountries.com/">Rest Countries API</a>
 
-          
             <a className="m-6" href="https://openweathermap.org/">
               Open Weather API
             </a>
-          
           </div>
         </div>
       </div>

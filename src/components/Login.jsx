@@ -19,11 +19,9 @@ const Login = () => {
     if (user) navigate("/countries");
   }, [user, loading, navigate]);
 
-  
-
   return (
     <div style={{ background: "lightgrey", height: "100vh", width: "100vw" }}>
-        <h2 className="text-center mt-5" >Login</h2>
+      <h2 className="text-center mt-5">Login</h2>
       <div
         style={{
           display: "flex",
@@ -33,7 +31,6 @@ const Login = () => {
         }}
       >
         <input
-        
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
