@@ -10,7 +10,7 @@ const Home = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        height: "90vh",
+        height: "95vh",
       }}
     >
       <div style={{ display: "flex", flexDirection: "row" }}>
