@@ -10,7 +10,7 @@
 
  User need to register or log in to access all the countries and then is also able to add or remove favourite countries from favourite countries list.
 
- Can select a country to see additional details.
+ User can select a country to see additional details.
 
  Favourite countries data is stored in local storage .
 
