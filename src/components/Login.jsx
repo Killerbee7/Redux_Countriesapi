@@ -26,7 +26,7 @@ const Login = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          marginTop: "55px",
+          marginTop: "50px",
           gap: "20px",
         }}
       >
