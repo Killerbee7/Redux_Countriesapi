@@ -30,7 +30,7 @@ const Home = () => {
           <div
             style={{
               textAlign: "right",
-              top: "40%",
+              top: "45%",
 
               right: "16px",
               position: "absolute",
