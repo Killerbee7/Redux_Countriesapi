@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <Container fluid>
       <Row>
-        <Navbar bg="dark" variant="light">
+        <Navbar bg="light" variant="light">
           <Container className="justify-content-end">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -39,7 +39,7 @@ const Layout = () => {
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
-            <div>
+            <>
               {user ? (
                 <>
                   Hi : {user.displayName}
@@ -49,7 +49,7 @@ const Layout = () => {
                 <>
                 </>
               )}
-            </div>
+            </>
           
         
           </Container>
