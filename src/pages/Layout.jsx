@@ -42,7 +42,7 @@ const Layout = () => {
             <div>
               {user ? (
                 <>
-                  Hi : {user.email}
+                  Hi : {user.displayName}
                   <button onClick={()=> logout()}>Logout</button>
                 </>
               ) : (
