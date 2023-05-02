@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 const buttonHandler=async()=> {
-  const {data}= await axios.get("https://exove.vercel.app/api/login", {
+  const {data}= await axios.post("https://exove.vercel.app/api/login", {
     username:"newton",
     password:"password"
   },{withCredentials:true})
