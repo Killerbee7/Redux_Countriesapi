@@ -9,10 +9,28 @@ const buttonHandler=async()=> {
     username:"newton",
     password:"password"
   },{withCredentials:true})
+if(data)
+{
+  await fetchHandler()
+  
+  await reqPicks();
 
+}
   console.log(data)
 }
+const reqPicks = async () =>{
+  const {data} = await axios.get('https://exove.vercel.app/api/picks', {withCredentials:true})
+  console.log(data)
+  return data
+}
 
+const fetchHandler = async ()=>{
+  const {data}= await axios.get("https://exove.vercel.app/api", {withCredentials:true})
+
+console.log(data)
+return data
+  
+ }
 
 const Home = () => {
   return (
@@ -58,6 +76,7 @@ const Home = () => {
               Open Weather API
             </a>
             <button onClick={buttonHandler}>Press Me</button>
+            
           </div>
         </div>
       </div>
