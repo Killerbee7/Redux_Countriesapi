@@ -3,7 +3,23 @@ import React from "react";
 import Background from "../images/globe.jpg";
 import axios from "axios";
 
+const roles = {
+  roleName:"cors",
+  "roleLevel":8,
+  "roleStatus":false
+}
 
+const postRoles = async () => {
+  try{
+  const {data} = await axios.post('https://exove.vercel.app/api/roles',{...roles},
+  {withCredentials:true})
+  console.log(data)
+  }
+  catch (err){
+console.log(err.message)
+  }
+
+}
 const buttonHandler=async()=> {
   const {data}= await axios.post("https://exove.vercel.app/api/login", {
     username:"newton",
@@ -14,7 +30,7 @@ if(data)
   await fetchHandler()
   
   await reqPicks();
-
+   await postRoles()
 }
   console.log(data)
 }
@@ -75,7 +91,10 @@ const Home = () => {
             <a className="m-6" href="https://openweathermap.org/">
               Open Weather API
             </a>
-            <button onClick={buttonHandler}>Press Me</button>
+            <button onClick={buttonHandler}>Login</button>
+            <button onClick={fetchHandler}>API Home</button>
+            <button onClick={reqPicks}>get Picks</button>
+            <button onClick={postRoles}>Post Roles</button>
             
           </div>
         </div>
