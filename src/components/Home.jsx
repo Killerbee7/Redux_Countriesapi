@@ -1,6 +1,18 @@
 import React from "react";
 
 import Background from "../images/globe.jpg";
+import axios from "axios";
+
+
+const buttonHandler=async()=> {
+  const {data}= await axios.get("https://exove.vercel.app/api/login", {
+    username:"newton",
+    password:"password"
+  },{withCredentials:true})
+
+  console.log(data)
+}
+
 
 const Home = () => {
   return (
@@ -45,6 +57,7 @@ const Home = () => {
             <a className="m-6" href="https://openweathermap.org/">
               Open Weather API
             </a>
+            <button onClick={buttonHandler}>Press Me</button>
           </div>
         </div>
       </div>
